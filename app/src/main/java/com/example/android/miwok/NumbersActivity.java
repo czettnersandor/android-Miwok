@@ -13,27 +13,27 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
-    public ArrayList<String> words = new ArrayList<>();
+    public ArrayList<Word> words = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        words.add("one");
-        words.add("two");
-        words.add("three");
-        words.add("four");
-        words.add("five");
-        words.add("six");
-        words.add("seven");
-        words.add("eight");
-        words.add("nine");
-        words.add("ten");
+        words.add(new Word("one", "lutti"));
+        words.add(new Word("two", "lutti"));
+        words.add(new Word("three", "lutti"));
+        words.add(new Word("four", "lutti"));
+        words.add(new Word("five", "lutti"));
+        words.add(new Word("six", "lutti"));
+        words.add(new Word("seven", "lutti"));
+        words.add(new Word("eight", "lutti"));
+        words.add(new Word("nine", "lutti"));
+        words.add(new Word("ten", "lutti"));
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
 
-        GridView listView = (GridView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(itemsAdapter);
     }
