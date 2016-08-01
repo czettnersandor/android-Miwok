@@ -17,7 +17,7 @@ public class NumbersActivity extends AbstractWordsActivity {
 
     @Override
     protected int getActivityId() {
-        return R.layout.activity_numbers;
+        return R.layout.word_list;
     }
 
 }

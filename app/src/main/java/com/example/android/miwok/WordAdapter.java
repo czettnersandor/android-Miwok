@@ -7,13 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-/**
- * Created by sandor on 31/07/16.
- */
 public class WordAdapter extends ArrayAdapter<Word> {
 
     public WordAdapter(Activity context, ArrayList<Word> words) {
@@ -25,7 +20,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View listViewItem = convertView;
 
         // Check if the view is being reused, otherwise create it.
-        if (listViewItem ==null) {
+        if (listViewItem == null) {
             listViewItem = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
