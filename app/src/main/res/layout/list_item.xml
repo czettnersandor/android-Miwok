@@ -2,26 +2,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_height="88dp"
+    android:background="@color/category_family">
 
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
         android:scaleType="centerCrop"
-        android:layout_marginRight="16dp"
+        android:background="@color/tan_background"
         android:src="@mipmap/ic_launcher"/>
     <TextView
         android:id="@+id/miwok_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_toRightOf="@id/imageview"
         tools:text="lutti"/>
     <TextView
         android:id="@+id/english_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/white"
         android:layout_toRightOf="@id/imageview"
         android:layout_below="@id/miwok_word"
         tools:text="one"/>

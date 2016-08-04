@@ -20,4 +20,8 @@ public class PhrasesActivity extends AbstractWordsActivity {
         return R.layout.word_list;
     }
 
+    @Override
+    protected int getBackgroundColor() {
+        return R.color.category_phrases;
+    }
 }

@@ -12,6 +12,7 @@ public abstract class AbstractWordsActivity extends AppCompatActivity {
 
     protected abstract void addWords();
     protected abstract int getActivityId();
+    protected abstract int getBackgroundColor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,8 @@ public abstract class AbstractWordsActivity extends AppCompatActivity {
         addWords();
 
         WordAdapter itemsAdapter = new WordAdapter(this, words);
+
+        itemsAdapter.setBackgroundColor(getBackgroundColor());
 
         ListView listView = (ListView) findViewById(R.id.list);
 
