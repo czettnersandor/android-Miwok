@@ -34,6 +34,7 @@ public abstract class AbstractWordsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
                 mediaPlayer = MediaPlayer.create(AbstractWordsActivity.this, words.get(position).getAudioResourceId());
                 mediaPlayer.start();
             }
@@ -44,7 +45,17 @@ public abstract class AbstractWordsActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        mediaPlayer.release();
         super.onStop();
+        releaseMediaPlayer();
+    }
+
+    /**
+     * Release media player when exist
+     */
+    protected void releaseMediaPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
