@@ -33,7 +33,9 @@ public abstract class AbstractWordsActivity extends AppCompatActivity {
                     }
                     break;
                 case AudioManager.AUDIOFOCUS_GAIN:
-                    mMediaPlayer.start();
+                    if (mMediaPlayer != null) {
+                        mMediaPlayer.start();
+                    }
                     break;
                 case AudioManager.AUDIOFOCUS_LOSS:
                     releaseMediaPlayer();
@@ -94,6 +96,7 @@ public abstract class AbstractWordsActivity extends AppCompatActivity {
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
+            mAudioManager.abandonAudioFocus(mAudioFocusChange);
         }
     }
 }
